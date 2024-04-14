@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 //importamos bootstrap 
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
