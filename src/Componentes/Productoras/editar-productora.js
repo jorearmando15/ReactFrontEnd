@@ -47,10 +47,10 @@ const EditarProductora = () => {
                 console.error('Error al obtener la productora por su ID:', error);
             }
         };
-        
+
         getProductoraById();
     }, [id]); // Agregar id como dependencia
-    
+
     return (
         <div className="container">
             <h1 className="text-center mt-5 text-white fw-bold">Editar Productora</h1>

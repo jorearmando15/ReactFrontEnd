@@ -25,33 +25,49 @@ import Genero from './Componentes/Generos/genero';
 import CrearGenero from './Componentes/Generos/crear-genero'
 import EditarGenero from './Componentes/Generos/editar-genero';
 
+//componentes de media
+import Media from './Componentes/Media/media';
+import EditarMedia from './Componentes/Media/editar-media';
+import CrearMedia from './Componentes/Media/crear-media';
+
+
+
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path='/inicio'/>
 
-          {/* Rutas de tipos*/}
+          {/* Rutas de Inicio*/}
+          <Route path='/inicio' />
+
+          {/* Rutas de Tipos*/}
           <Route path='/tipos' element={<Tipo />} />
           <Route path='/crear-tipo' element={<CrearTipo />} />
           <Route path='/editar-tipo/:id' element={<EditarTipo />} />
 
-          {/* Rutas de productoras*/}
-          <Route path='/productoras' element={<Productora />} />
-          <Route path='/crear-productora' element={<CrearProductora/>}/>
-          <Route path='/editar-productora/:id' element={<EditarProductora />} />
+          {/* Rutas de Generos*/}
+          <Route path='/generos' element={<Genero />} />
+          <Route path='/crear-genero' element={<CrearGenero />} />
+          <Route path='/editar-genero/:id' element={<EditarGenero />} />
 
           {/* Rutas de Directores*/}
           <Route path='/directores' element={<Director />} />
-          <Route path='/crear-director' element={<CrearDirector/>}/>
+          <Route path='/crear-director' element={<CrearDirector />} />
           <Route path='/editar-director/:id' element={<EditarDirector />} />
 
-          {/* Rutas de Directores*/}
-          <Route path='/generos' element={<Genero />} />
-          <Route path='/crear-genero' element={<CrearGenero/>}/>
-          <Route path='/editar-genero/:id' element={<EditarGenero />} />
+          {/* Rutas de Productoras*/}
+          <Route path='/productoras' element={<Productora />} />
+          <Route path='/crear-productora' element={<CrearProductora />} />
+          <Route path='/editar-productora/:id' element={<EditarProductora />} />
+
+          {/* Rutas de media*/}
+          <Route path='/media' element={<Media />} />
+           {/*<Route path='/crear-media' element={<CrearMedia />} /> */}
+          <Route path='/editar-media/:id' element={<EditarMedia />} />
+
+
           {/* Otras rutas aquí */}
         </Routes>
         <Footer />

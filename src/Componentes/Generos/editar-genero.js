@@ -11,7 +11,7 @@ const EditarGenero = () => {
     const [fecha_actualizacion, setFechaActualizacion] = useState('');
     const [descripcion, setDescripcion] = useState('');
     const navigate = useNavigate();
-    const {id} = useParams();
+    const { id } = useParams();
 
     // Procedimiento para actualizar
     const actualizar = async (e) => {
@@ -44,7 +44,7 @@ const EditarGenero = () => {
                 console.error('Error al obtener el género por su ID:', error);
             }
         };
-        
+
         getGeneroById();
     }, [id]); // Agregar id como dependencia
     return (
@@ -57,13 +57,13 @@ const EditarGenero = () => {
                     <div className="col-md-4">
                         <div className="form-outline">
                             <label htmlFor="nombre" className="form-label text-white fw-bold">Nombre</label>
-                            <input id="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} type="text"  className="form-control" />
+                            <input id="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} type="text" className="form-control" />
                         </div>
                     </div>
                     <div className="col-md-4">
                         <div className="form-outline">
                             <label htmlFor="estado" className="form-label text-white fw-bold">Estado</label>
-                            <input id="estado" value={estado} onChange={(e) => setEstado(e.target.value)} type="text"  className="form-control" />
+                            <input id="estado" value={estado} onChange={(e) => setEstado(e.target.value)} type="text" className="form-control" />
                         </div>
                     </div>
                     <div className="col-md-4">

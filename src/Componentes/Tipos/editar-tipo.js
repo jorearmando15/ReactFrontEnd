@@ -43,7 +43,7 @@ const EditarTipo = () => {
 
         getTipoById();
     }, [id]); // Agregar id como dependencia
-    
+
     return (
         <div className="container">
             <h1 className="text-center mt-5 text-white fw-bold">Editar tipos</h1>

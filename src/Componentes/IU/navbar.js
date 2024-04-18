@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="container-fluid">
         <Link className="navbar-brand fs-4 text-white d-flex align-items-center" to="/inicio">
           <img src={logop} alt="Logo de Películas" width="60" height="60" className="d-inline-block align-top me-2" />
-          <span className="fw-bold text-white custom-font">CUEVAFLIX</span>
+          <span className="skranji-bold text-white custom-font me-5">CUEVAFLIX</span>
         </Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -35,7 +35,7 @@ const Navbar = () => {
             </li>
           </ul>
           <form className="d-flex ms-auto me-3" role="search">
-            <input className="form-control me-2" type="search" placeholder="Buscar películas, series..." aria-label="Search" />
+            <input id="busqueda" name="busqueda" className="form-control me-2" type="search" placeholder="Buscar películas, series..." aria-label="Search"></input>
             <button className="btn btn-outline-primary" type="submit">Buscar</button>
           </form>
         </div>

@@ -10,7 +10,7 @@ const EditarDirector = () => {
     const [fecha_creacion, setFechaCreacion] = useState('');
     const [fecha_actualizacion, setFechaActualizacion] = useState('');
     const navigate = useNavigate();
-    const {id} = useParams();
+    const { id } = useParams();
 
     // Procedimiento para actualizar
     const actualizar = async (e) => {
@@ -41,7 +41,7 @@ const EditarDirector = () => {
                 console.error('Error al obtener el director por su ID:', error);
             }
         };
-        
+
         getDirectoraById();
     }, [id]); // Agregar id como dependencia
     return (
@@ -54,13 +54,13 @@ const EditarDirector = () => {
                     <div className="col-md-4">
                         <div className="form-outline">
                             <label htmlFor="nombre" className="form-label text-white fw-bold">Nombre</label>
-                            <input id="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} type="text"  className="form-control" />
+                            <input id="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} type="text" className="form-control" />
                         </div>
                     </div>
                     <div className="col-md-4">
                         <div className="form-outline">
                             <label htmlFor="estado" className="form-label text-white fw-bold">Estado</label>
-                            <input id="estado" value={estado} onChange={(e) => setEstado(e.target.value)} type="text"  className="form-control" />
+                            <input id="estado" value={estado} onChange={(e) => setEstado(e.target.value)} type="text" className="form-control" />
                         </div>
                     </div>
                     <div className="col-md-4">
@@ -74,7 +74,7 @@ const EditarDirector = () => {
                             <label htmlFor="fecha_actualizacion" className="form-label text-white fw-bold">Fecha de actualizacion</label>
                             <input id="fecha_actualizacion" value={fecha_actualizacion} onChange={(e) => setFechaActualizacion(e.target.value)} type="date" className="form-control" />
                         </div>
-                    </div>      
+                    </div>
                 </div>
 
                 <div className="button-container d-flex justify-content-center mb-4">
