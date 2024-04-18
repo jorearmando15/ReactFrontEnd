@@ -64,7 +64,7 @@ function App() {
 
           {/* Rutas de media*/}
           <Route path='/media' element={<Media />} />
-           {/*<Route path='/crear-media' element={<CrearMedia />} /> */}
+           <Route path='/crear-media' element={<CrearMedia />} /> 
           <Route path='/editar-media/:id' element={<EditarMedia />} />
 
 
