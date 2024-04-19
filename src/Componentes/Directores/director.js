@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import pelicula from "../../imagen/pelicula.jpg";
+import logop from "../../imagen/logop.png";
 
 const URI = 'http://localhost:3200/director/';
 
@@ -37,12 +37,12 @@ const Director = () => {
 
   return (
     <div className="container">
-      <Link to="/crear-director" className="btn btn-primary btn-lg mt-3 fw-bold">Crear Directores</Link>
+      <Link to="/crear-director" className="btn btn-primary btn-lg mt-3 fw-bold">Crear Director</Link>
       <div className="row">
         {directores.map((director) => (
           <div className="col-md-2 mb-4 mt-3" key={director.id_director}>
             <div className="card">
-              <img src={pelicula} className="card-img-top" alt="logo" />
+              <img src={logop} className="card-img-top" alt="logo" />
               <div className="card-body">
                 <h5 className="card-title">{director.nombre}</h5>
                 <p className="card-text">{director.estado}</p>

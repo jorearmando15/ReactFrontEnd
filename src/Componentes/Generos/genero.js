@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import pelicula from "../../imagen/pelicula.jpg";
+import logop from "../../imagen/logop.png";
 
 const URI = 'http://localhost:3200/genero/';
 
@@ -37,12 +37,12 @@ const Genero = () => {
 
   return (
     <div className="container">
-      <Link to="/crear-genero" className="btn btn-primary btn-lg mt-3 fw-bold">Crear Generos</Link>
+      <Link to="/crear-genero" className="btn btn-primary btn-lg mt-3 fw-bold">Crear Género</Link>
       <div className="row">
         {generos.map((genero) => (
           <div className="col-md-2 mb-4 mt-3" key={genero.id_genero}>
             <div className="card">
-              <img src={pelicula} className="card-img-top" alt="logo" />
+              <img src={logop} className="card-img-top" alt="logo" />
               <div className="card-body">
                 <h5 className="card-title">{genero.nombre}</h5>
                 <p className="card-text">{genero.estado}</p>

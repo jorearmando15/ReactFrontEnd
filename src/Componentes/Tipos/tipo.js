@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import pelicula from "../../imagen/pelicula.jpg";
+import logop from "../../imagen/logop.png";
 
 const URI = 'http://localhost:3200/tipo/';
 
@@ -37,12 +37,12 @@ const Tipo = () => {
 
   return (
     <div className="container">
-      <Link to="/crear-tipo" className="btn btn-primary btn-lg mt-3 fw-bold">Crear Tipos</Link>
+      <Link to="/crear-tipo" className="btn btn-primary btn-lg mt-3 fw-bold">Crear Tipo</Link>
       <div className="row">
         {tipos.map((tipo) => (
           <div className="col-md-2 mb-4 mt-3" key={tipo.id_tipo}>
             <div className="card">
-              <img src={pelicula} className="card-img-top" alt="logo" />
+              <img src={logop} className="card-img-top" alt="logo" />
               <div className="card-body">
                 <h5 className="card-title">{tipo.nombre}</h5>
                 <p className="card-text">{tipo.sinopsis}</p>

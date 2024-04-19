@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import pelicula from "../../imagen/pelicula.jpg";
+import logop from "../../imagen/logop.png";
 
 
 const URI = 'http://localhost:3200/productora/';
@@ -38,12 +38,12 @@ const Productora = () => {
 
   return (
     <div className="container">
-      <Link to="/crear-productora" className="btn btn-primary btn-lg mt-3 fw-bold">Crear Productoras</Link>
+      <Link to="/crear-productora" className="btn btn-primary btn-lg mt-3 fw-bold">Crear Productora</Link>
       <div className="row">
         {productoras.map((productora) => (
           <div className="col-md-2 mb-4 mt-3" key={productora.id_productora}>
             <div className="card">
-              <img src={pelicula} className="card-img-top" alt="logo" />
+              <img src={logop} className="card-img-top" alt="logo" />
               <div className="card-body">
                 <h5 className="card-title">{productora.nombre}</h5>
                 <p className="card-text">{productora.estado}</p>

@@ -28,27 +28,32 @@ const EditarMedia = () => {
   const actualizar = async (e) => {
     e.preventDefault();
     try {
-      console.log("ID del medio:", id); // Agrega esta línea para verificar el ID del medio
-
-      await axios.put(URI + id, {
-        titulo: titulo,
-        sinopsis: sinopsis,
-        anno_estreno: anno_estreno,
-        fecha_creacion: fecha_creacion,
-        fecha_actualizacion: fecha_actualizacion,
-        id_genero: id_genero,
-        id_director: id_director,
-        id_productora: id_productora,
-        id_tipo: id_tipo,
-        url_pelicula: url_pelicula,
-        imagen_portada: imagen_portada
+      const formData = new FormData();
+      formData.append('imagen_portada', imagen_portada);
+      formData.append('titulo', titulo);
+      formData.append('sinopsis', sinopsis);
+      formData.append('anno_estreno', anno_estreno);
+      formData.append('fecha_creacion', fecha_creacion);
+      formData.append('fecha_actualizacion', fecha_actualizacion);
+      formData.append('id_genero', id_genero);
+      formData.append('id_director', id_director);
+      formData.append('id_productora', id_productora);
+      formData.append('id_tipo', id_tipo);
+      formData.append('url_pelicula', url_pelicula);
+  
+      await axios.put(URI + id, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
       });
+  
       navigate('/media');
-
+  
     } catch (error) {
       console.error('Error al actualizar el medio:', error);
     }
   };
+  
   
 
   useEffect(() => {
@@ -133,13 +138,13 @@ const EditarMedia = () => {
             <div className="col-md-6">
               <div className="form-outline">
                 <label htmlFor="titulo" className="form-label text-white fw-bold">Título</label>
-                <input id="titulo" name="titulo" value={titulo} onChange={(e) => setTitulo(e.target.value)} type="text" className="form-control" />
+                <input id="titulo" name="titulo" value={titulo} onChange={(e) => setTitulo(e.target.value)} type="text" className="form-control" required/>
               </div>
             </div>
             <div className="col-md-6">
               <div className="form-outline">
                 <label htmlFor="sinopsis" className="form-label text-white fw-bold">Sinopsis</label>
-                <textarea id="sinopsis" name="sinopsis" value={sinopsis} onChange={(e) => setSinopsis(e.target.value)} className="form-control" rows="4"></textarea>
+                <textarea id="sinopsis" name="sinopsis" value={sinopsis} onChange={(e) => setSinopsis(e.target.value)} className="form-control" rows="4" required></textarea>
               </div>
             </div>
           </div>
@@ -147,13 +152,13 @@ const EditarMedia = () => {
             <div className="col-md-6">
               <div className="form-outline">
                 <label htmlFor="anno_estreno" className="form-label text-white fw-bold">Año de Estreno</label>
-                <input id="anno_estreno" name="anno_estreno" value={anno_estreno} onChange={(e) => setAnnoEstreno(e.target.value)} type="text" className="form-control" />
+                <input id="anno_estreno" name="anno_estreno" value={anno_estreno} onChange={(e) => setAnnoEstreno(e.target.value)} type="text" className="form-control" required/>
               </div>
             </div>
             <div className="col-md-6">
               <div className="form-outline">
                 <label htmlFor="url_pelicula" className="form-label text-white fw-bold">URL de la Película</label>
-                <input id="url_pelicula" name="url_pelicula" value={url_pelicula} onChange={(e) => setUrlPelicula(e.target.value)} type="text" className="form-control" />
+                <input id="url_pelicula" name="url_pelicula" value={url_pelicula} onChange={(e) => setUrlPelicula(e.target.value)} type="text" className="form-control" required/>
               </div>
             </div>
           </div>
@@ -166,13 +171,13 @@ const EditarMedia = () => {
             <div className="col-md-4">
               <div className="form-outline">
                 <label htmlFor="fecha_creacion" className="form-label text-white fw-bold">Fecha de creación</label>
-                <input id="fecha_creacion" value={fecha_creacion} onChange={(e) => setFechaCreacion(e.target.value)} type="date" className="form-control" />
+                <input id="fecha_creacion" value={fecha_creacion} onChange={(e) => setFechaCreacion(e.target.value)} type="date" className="form-control" required/>
               </div>
             </div>
             <div className="col-md-4">
               <div className="form-outline">
                 <label htmlFor="fecha_actualizacion" className="form-label text-white fw-bold">Fecha de actualización</label>
-                <input id="fecha_actualizacion" value={fecha_actualizacion} onChange={(e) => setFechaActualizacion(e.target.value)} type="date" className="form-control" />
+                <input id="fecha_actualizacion" value={fecha_actualizacion} onChange={(e) => setFechaActualizacion(e.target.value)} type="date" className="form-control" required/>
               </div>
             </div>
           </div>
@@ -185,7 +190,7 @@ const EditarMedia = () => {
             <div className="col-md-6">
               <div className="form-outline">
                 <label htmlFor="genero" className="form-label text-white fw-bold">Género</label>
-                <select id="genero" name="genero" value={id_genero} onChange={(e) => setIdGenero(e.target.value)} className="form-select">
+                <select id="genero" name="genero" value={id_genero} onChange={(e) => setIdGenero(e.target.value)} className="form-select" required>
                   {generos.map((gen) => (
                     <option key={gen.id_genero} value={gen.id_genero}>{gen.nombre}</option>
                   ))}
@@ -195,7 +200,7 @@ const EditarMedia = () => {
             <div className="col-md-6">
               <div className="form-outline">
                 <label htmlFor="tipo" className="form-label text-white fw-bold">Tipo</label>
-                <select id="tipo" name="tipo" value={id_tipo} onChange={(e) => setIdTipo(e.target.value)} className="form-select">
+                <select id="tipo" name="tipo" value={id_tipo} onChange={(e) => setIdTipo(e.target.value)} className="form-select" required>
                   {tipos.map((tip) => (
                     <option key={tip.id_tipo} value={tip.id_tipo}>{tip.nombre}</option>
                   ))}
@@ -207,7 +212,7 @@ const EditarMedia = () => {
             <div className="col-md-6">
               <div className="form-outline">
                 <label htmlFor="director" className="form-label text-white fw-bold">Director</label>
-                <select id="director" name="director" value={id_director} onChange={(e) => setIdDirector(e.target.value)} className="form-select">
+                <select id="director" name="director" value={id_director} onChange={(e) => setIdDirector(e.target.value)} className="form-select" required>
                   {directores.map((direc) => (
                     <option key={direc.id_director} value={direc.id_director}>{direc.nombre}</option>
                   ))}
@@ -217,7 +222,7 @@ const EditarMedia = () => {
             <div className="col-md-6">
               <div className="form-outline">
                 <label htmlFor="productora" className="form-label text-white fw-bold">Productora</label>
-                <select id="productora" name="productora" value={id_productora} onChange={(e) => setIdProductora(e.target.value)} className="form-select">
+                <select id="productora" name="productora" value={id_productora} onChange={(e) => setIdProductora(e.target.value)} className="form-select"required>
                   {productoras.map((produc) => (
                     <option key={produc.id_productora} value={produc.id_productora}>{produc.nombre}</option>
                   ))}
@@ -233,15 +238,16 @@ const EditarMedia = () => {
           <div className="row">
             <div className="col-md-6">
               <div className="form-outline">
-                <label htmlFor="imagenPortada" className="form-label text-white fw-bold">Imagen de Portada</label>
-                <input id="imagenPortada" name="imagenPortada" type="file" onChange={(e) => setImagenPortada(e.target.files[0])} className="form-control" />
-                s                  </div>
+                <label htmlFor="imagen_portada" className="form-label text-white fw-bold">Imagen de Portada</label>
+                <input id="imagen_portada" name="imagen_portada" type="file" onChange={(e) => setImagenPortada(e.target.files[0])} className="form-control" />
+              </div>
             </div>
           </div>
         </fieldset>
 
+
         <div className="button-container d-flex justify-content-center mb-4">
-          <button type="submit" className="btn btn-primary me-2">Editar Medio</button>
+          <button type="submit" className="btn btn-primary me-2">Editar Media</button>
           <button type="button" className="btn btn-secondary">Cancelar</button>
         </div>
 

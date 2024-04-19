@@ -42,7 +42,7 @@ const Media = () => {
                 {medias.map((media) => (
                     <div className="col" key={media.id_media}>
                         <div className="card h-100">
-                            <img src={media.imagen_portada} className="card-img-top" alt="Portada" />
+                            <img src={`http://localhost:3200/almacenar/imagen_portada/${media.imagen_portada}`} alt={media.titulo} />
                             <div className="card-body">
                                 <h5 className="card-title">{media.titulo}</h5>
                                 <p className="card-text">{media.sinopsis}</p>
@@ -61,6 +61,7 @@ const Media = () => {
             </div>
         </div>
     );
+
 };
 
 export default Media;

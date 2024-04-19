@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 //Componente IU
 import Navbar from './Componentes/IU/navbar';
 import Footer from './Componentes/IU/footer';
+import Inicio from './Componentes/IU/inicio';
 
 //Componentes de tipos
 import Tipo from './Componentes/Tipos/tipo';
@@ -40,7 +41,7 @@ function App() {
         <Routes>
 
           {/* Rutas de Inicio*/}
-          <Route path='/inicio' />
+          <Route path='/inicio'  element={<Inicio />} />
 
           {/* Rutas de Tipos*/}
           <Route path='/tipos' element={<Tipo />} />
