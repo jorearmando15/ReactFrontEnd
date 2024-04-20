@@ -41,7 +41,9 @@ function App() {
         <Routes>
 
           {/* Rutas de Inicio*/}
-          <Route path='/inicio'  element={<Inicio />} />
+          <Redirect exact from="/" to="/inicio" />
+
+          <Route path="/" element={<Navigate to="/inicio" />} /> {/* Utiliza Navigate para redirigir */}
 
           {/* Rutas de Tipos*/}
           <Route path='/tipos' element={<Tipo />} />
