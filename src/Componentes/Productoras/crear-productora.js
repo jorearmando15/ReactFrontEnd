@@ -13,6 +13,7 @@ const CrearProductora = () => {
     const [descripcion, setDescripcion] = useState('');
     const navigate = useNavigate();
 
+        //Procedimiento para guardar
     const almacenar = async (e) => {
         e.preventDefault();
         try {

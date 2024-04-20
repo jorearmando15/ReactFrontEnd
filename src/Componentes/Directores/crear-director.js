@@ -11,6 +11,8 @@ const CrearDirector = () => {
     const [fecha_actualizacion, setFechaActualizacion] = useState('');
     const navigate = useNavigate();
 
+
+    //Procedimiento para guardar
     const almacenar = async (e) => {
         e.preventDefault();
         try {

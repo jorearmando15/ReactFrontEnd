@@ -24,6 +24,7 @@ const CrearMedia = () => {
   const [tipos, setTipos] = useState([]);
   const navigate = useNavigate();
 
+      //Procedimiento para guardar
   const almacenar = async (e) => {
     e.preventDefault();
     try {

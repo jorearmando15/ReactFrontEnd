@@ -11,7 +11,8 @@ const CrearTipo = () => {
     const [descripcion, setDescripcion] = useState('');
     const navigate = useNavigate();
 
-    const store = async (e) => {
+        //Procedimiento para guardar
+    const almacenar = async (e) => {
         e.preventDefault();
         try {
             await axios.post(URI, {
@@ -32,7 +33,7 @@ const CrearTipo = () => {
             <h1 className="text-center mt-5 text-white fw-bold">Crear Tipo</h1>
             <hr className="text-white bg-primary" style={{ height: "4px", border: "none" }} />
 
-            <form onSubmit={store}>
+            <form onSubmit={almacenar}>
 
                 {/* Información básica */}
                 <fieldset className="mb-4">
