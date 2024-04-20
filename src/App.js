@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 
 //Componente IU
 import Navbar from './Componentes/IU/navbar';
@@ -41,9 +41,9 @@ function App() {
         <Routes>
 
           {/* Rutas de Inicio*/}
-          <Redirect exact from="/" to="/inicio" />
 
           <Route path="/" element={<Navigate to="/inicio" />} /> {/* Utiliza Navigate para redirigir */}
+          <Route path='/inicio'  element={<Inicio />} />
 
           {/* Rutas de Tipos*/}
           <Route path='/tipos' element={<Tipo />} />
