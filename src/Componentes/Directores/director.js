@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logop from "../../imagen/logop.png";
 
-const URI = 'https://nodebackend-8whn.onrender.com/director/';
+const URI = 'http://localhost:3200/director/';
 
 const Director = () => {
   const [directores, setDirector] = useState([]);
